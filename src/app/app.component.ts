@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
+import { EnvironmentService } from '@app/environment.service';
 
 @Component({
-  selector: 'my-app',
+  selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent  {
-  name = 'Angular';
+export class AppComponent {
+  apiUrl = '';
+
+  constructor(environment: EnvironmentService) {
+    this.apiUrl = environment.apiUrl;
+  }
 }
